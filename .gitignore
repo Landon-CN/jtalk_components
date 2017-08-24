@@ -1,0 +1,5 @@
+node_modules
+*.debug
+.idea
+.awcache
+.DS_StoreÏ
