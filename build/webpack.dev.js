@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 baseConfig.entry.index = [baseConfig.entry.index, './build/devClient'];
 
 const devConfig = merge(baseConfig, {
-    devtool: "#cheap-eval-source-map",
+    devtool: "#source-map",
     plugins: [
         new FriendlyErrorsWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
