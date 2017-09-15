@@ -59,7 +59,7 @@
 /******/
 /******/
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "913d1b82253d244b21f9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7a2eea95ec4419da69b0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -11078,33 +11078,26 @@ module.exports = __webpack_require__(196);
 
 /***/ }),
 /* 88 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registerServiceWorker__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index_css__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__index_css__);
 
 
-var _react = __webpack_require__(51);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(104);
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__App__["a" /* default */], null), document.getElementById('root'));
+Object(__WEBPACK_IMPORTED_MODULE_3__registerServiceWorker__["a" /* default */])();
 
-var _App = __webpack_require__(190);
-
-var _App2 = _interopRequireDefault(_App);
-
-var _registerServiceWorker = __webpack_require__(194);
-
-var _registerServiceWorker2 = _interopRequireDefault(_registerServiceWorker);
-
-__webpack_require__(195);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
-(0, _registerServiceWorker2.default)();
 
 /***/ }),
 /* 89 */
@@ -23734,55 +23727,47 @@ module.exports = ReactDOMInvalidARIAHook;
 
 /***/ }),
 /* 190 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logo_svg__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logo_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__logo_svg__);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(51);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(191);
-
-var _logo = __webpack_require__(193);
-
-var _logo2 = _interopRequireDefault(_logo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
-
+var App = /** @class */ (function (_super) {
+    __extends(App, _super);
     function App() {
-        _classCallCheck(this, App);
-
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-
-    _createClass(App, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement("div", { className: "App" }, _react2.default.createElement("div", { className: "App-header" }, _react2.default.createElement("img", { src: _logo2.default, className: "App-logo", alt: "logo" }), _react2.default.createElement("h2", null, "Welcome to React")), _react2.default.createElement("p", { className: "App-intro" }, "To get started, edit ", _react2.default.createElement("code", null, "src/App.tsx"), " and save to reload."));
-        }
-    }]);
-
+    App.prototype.render = function () {
+        return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "App" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "App-header" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: __WEBPACK_IMPORTED_MODULE_2__logo_svg___default.a, className: "App-logo", alt: "logo" }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h2", null, "Welcome to React by scliuyang")),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", { className: "App-intro" },
+                "To get started, edit ",
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("code", null, "src/App.tsx"),
+                " and save to reload.")));
+    };
     return App;
-}(_react2.default.Component);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));
+/* harmony default export */ __webpack_exports__["a"] = (App);
 
-exports.default = App;
 
 /***/ }),
 /* 191 */
@@ -23918,16 +23903,11 @@ module.exports = __webpack_require__.p + "static/media/logo.5d5d9eef.svg";
 
 /***/ }),
 /* 194 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = register;
-exports.unregister = unregister;
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = register;
+/* unused harmony export unregister */
 // In production, we register a service worker to serve assets from local cache.
 // This lets the app load faster on subsequent visits in production, and gives
 // it offline capabilities. However, it also means that developers (and users)
@@ -23938,8 +23918,10 @@ exports.unregister = unregister;
 function register() {
     if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-            var swUrl = process.env.PUBLIC_URL + '/service-worker.js';
-            navigator.serviceWorker.register(swUrl).then(function (registration) {
+            var swUrl = process.env.PUBLIC_URL + "/service-worker.js";
+            navigator.serviceWorker
+                .register(swUrl)
+                .then(function (registration) {
                 registration.onupdatefound = function () {
                     var installingWorker = registration.installing;
                     if (!installingWorker) {
@@ -23953,7 +23935,8 @@ function register() {
                                 // It's the perfect time to display a "New content is
                                 // available; please refresh." message in your web app.
                                 console.log('New content is available; please refresh.'); // tslint:disable-line
-                            } else {
+                            }
+                            else {
                                 // At this point, everything has been precached.
                                 // It's the perfect time to display a
                                 // "Content is cached for offline use." message.
@@ -23962,7 +23945,7 @@ function register() {
                         }
                     };
                 };
-            }).catch(function (error) {
+            })["catch"](function (error) {
                 console.error('Error during service worker registration:', error); // tslint:disable-line
             });
         });
@@ -23975,7 +23958,8 @@ function unregister() {
         });
     }
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
 /* 195 */

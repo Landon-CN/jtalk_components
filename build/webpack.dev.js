@@ -4,8 +4,12 @@ const merge = require('webpack-merge');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const paths = require('./paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
-baseConfig.entry.index = [baseConfig.entry.index, './build/devClient'];
+baseConfig.entry = [
+    'react-hot-loader/patch',
+    path.resolve(__dirname, './devClient.js')
+].concat(baseConfig.entry);
 
 const devConfig = merge(baseConfig, {
     devtool: "#source-map",
@@ -17,7 +21,12 @@ const devConfig = merge(baseConfig, {
             template: paths.indexHtml,
             inject: true
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"development"'
+        }),
     ]
 });
+devConfig.module.loaders[0].use.unshift('react-hot-loader/webpack');
+
 
 module.exports = devConfig;

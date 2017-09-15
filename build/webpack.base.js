@@ -4,13 +4,12 @@ const {
 } = require('awesome-typescript-loader')
 const autoprefixer = require('autoprefixer');
 const paths = require('./paths');
+const path = require('path');
 
 module.exports = {
-    entry: {
-        index: paths.srcPath
-    },
+    entry: [paths.srcPath],
     output: {
-        filename: 'index.js',
+        filename: 'static/[name].js',
         path: paths.outputPath,
         publicPath: '/'
     },
@@ -21,7 +20,9 @@ module.exports = {
     module: {
         loaders: [{
                 test: /\.(ts|tsx)$/,
-                loader: 'awesome-typescript-loader'
+                use: ['awesome-typescript-loader'],
+                include: path.resolve(__dirname, '../src'),
+                exclude: path.resolve(__dirname, '../node_modules')
             },
             {
                 test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],

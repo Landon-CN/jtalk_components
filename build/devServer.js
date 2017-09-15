@@ -22,16 +22,31 @@ const hotMid = require("webpack-hot-middleware")(compiler, {
 app.use(devMid);
 
 app.use(hotMid);
-
+let _html = '';
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
+
     compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
 
-        hotMid.publish({
-            action: 'reload'
-        })
+        // 解决webpack 3.0+ HtmlWebpackPlugin bug
+        // https://github.com/webpack/webpack-dev-server/issues/949
+        _html = _html || data.html.source();
+        if (_html !== data.html.source()) {
+            _html = data.html.source();
+            hotMid.publish({
+                action: 'reload'
+            });
+        }
         cb()
     })
 })
+
+console.log('> Starting dev server...');
+
+
+devMid.waitUntilValid(() => {
+    console.log('> Listening at http://localhost:' + port + '\n')
+});
+
 
 const server = app.listen(port);

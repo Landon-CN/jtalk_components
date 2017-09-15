@@ -1,0 +1,10 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "node",
+        "request": "launch",
+        "name": "devServer",
+        "program": "${workspaceRoot}/build/devServer.js",
+        "runtimeExecutable": "/Users/jrliuyang5/.nvm/versions/node/v8.1.4/bin/node"
+    }]
+}
