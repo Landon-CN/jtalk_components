@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { AppContainer } from 'react-hot-loader';
-import './index.css';
+import configureStore from './redux/store';
+import './index.less';
+import './App.less';
 
-const render = (App: new () => Component) => {
+const store = configureStore();
+
+const render = (App: new () => App) => {
   ReactDOM.render(
     <AppContainer>
-      <App />
+      <App store={store} />
     </AppContainer>,
     document.getElementById('root')
   )

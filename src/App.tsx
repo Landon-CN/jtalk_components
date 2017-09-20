@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.less';
 import logo from './logo.svg';
+import { Page } from './modules';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
 
-class App extends React.Component<{}, {}> {
+interface props {
+  store: Store<any>
+}
+
+class App extends React.Component<props, {}> {
   render() {
+    const store = this.props.store;
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React by scliuyang</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+      <Provider store={store}>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Welcome to React by scliuyang11</h2>
+          </div>
+          <p className="App-intro">
+            To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-      </div>
+          <Page></Page>
+        </div>
+      </Provider>
     );
   }
 }

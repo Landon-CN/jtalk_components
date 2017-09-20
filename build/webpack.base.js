@@ -5,6 +5,48 @@ const {
 const autoprefixer = require('autoprefixer');
 const paths = require('./paths');
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+
+const lessUse = [{
+    loader: require.resolve('css-loader'),
+    options: {
+        importLoaders: 1,
+    },
+}, {
+    loader: require.resolve('postcss-loader'),
+    options: {
+        ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+        plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+                browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                ],
+                flexbox: 'no-2009',
+            }),
+        ],
+    },
+}, {
+    loader: require.resolve('less-loader')
+}];
+
+
+
+
+const lessLoader = {
+    test: /\.less$/,
+    use: process.env.NODE_ENV === 'production' ? ExtractTextPlugin.extract({
+        fallback: require.resolve('style-loader'),
+        use: lessUse
+    }) : [{
+        loader: require.resolve('style-loader')
+    }].concat(lessUse)
+}
+
 
 module.exports = {
     entry: [paths.srcPath],
@@ -32,42 +74,14 @@ module.exports = {
                     name: 'static/media/[name].[hash:8].[ext]',
                 },
             },
-            {
-                test: /\.css$/,
-                use: [
-                    require.resolve('style-loader'),
-                    {
-                        loader: require.resolve('css-loader'),
-                        options: {
-                            importLoaders: 1,
-                        },
-                    },
-                    {
-                        loader: require.resolve('postcss-loader'),
-                        options: {
-                            ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-                            plugins: () => [
-                                require('postcss-flexbugs-fixes'),
-                                autoprefixer({
-                                    browsers: [
-                                        '>1%',
-                                        'last 4 versions',
-                                        'Firefox ESR',
-                                        'not ie < 9', // React doesn't support IE8 anyway
-                                    ],
-                                    flexbox: 'no-2009',
-                                }),
-                            ],
-                        },
-                    },
-                ],
-            },
+            lessLoader,
             {
                 exclude: [
                     /\.html$/,
                     /\.(js|jsx)(\?.*)?$/,
                     /\.(ts|tsx)(\?.*)?$/,
                     /\.css$/,
+                    /\.less$/,
                     /\.json$/,
                     /\.bmp$/,
                     /\.gif$/,

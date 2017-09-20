@@ -17,6 +17,7 @@ const devConfig = merge(baseConfig, {
         new FriendlyErrorsWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
+            favicon: paths.faviconPath,
             filename: 'index.html',
             template: paths.indexHtml,
             inject: true
@@ -26,6 +27,8 @@ const devConfig = merge(baseConfig, {
         }),
     ]
 });
+
+// hot-reload
 devConfig.module.loaders[0].use.unshift('react-hot-loader/webpack');
 
 
