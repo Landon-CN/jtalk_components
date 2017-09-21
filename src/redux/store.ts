@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducers from '../modules/reducer';
+import createReducer from '../modules/reducer';
 import promiseMiddle from 'redux-promise';
 
 
@@ -17,10 +17,16 @@ const enhancer = composeEnhancers(
 );
 
 export default function configureStore(initialState = {}) {
-    const store = createStore(reducers,
+    const store = createStore(createReducer(),
         initialState,
         enhancer
     );
+    if (module.hot) {
+        module.hot.accept('../modules/reducer', () => {
+            const createNextReducer = require('../modules/reducer').default;
+            store.replaceReducer(createNextReducer());
+        })
+    }
 
     return store;
 }
