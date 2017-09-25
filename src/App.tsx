@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.less';
 import logo from './logo.svg';
 import { Page } from './modules';

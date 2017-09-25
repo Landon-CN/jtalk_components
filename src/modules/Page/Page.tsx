@@ -13,7 +13,7 @@ export interface Props {
     actions: typeof actions;
 }
 
-class Page extends React.Component<Props, State> {
+class Page extends Component<Props, State> {
 
     btnClick = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();

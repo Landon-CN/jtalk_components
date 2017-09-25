@@ -1,7 +1,6 @@
 import { handleActions, Action } from 'redux-actions';
 import * as Constants from './Constants';
 import * as Actions from './actions';
-import * as types from './types';
 
 const initState = {
   count: 1,
