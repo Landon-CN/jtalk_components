@@ -2,19 +2,18 @@ import React, { Component, MouseEvent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from './actions';
-import * as types from './types';
-import {state} from './reducer';
+import { state } from './reducer';
 
-export interface state {
-    count: number
+export interface State {
+    count: number;
 }
 
-export interface props {
-    store: typeof state,
-    actions: typeof actions,
+export interface Props {
+    store: typeof state;
+    actions: typeof actions;
 }
 
-class Page extends React.Component<props, state> {
+class Page extends React.Component<Props, State> {
 
     btnClick = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
@@ -32,12 +31,15 @@ class Page extends React.Component<props, state> {
     }
 }
 
-export default connect((store) => {
-    return {
-        store: store.Page
+export default connect(
+    (store) => {
+        return {
+            store: store.Page
+        };
+    },
+    (dispacth) => {
+        return {
+            actions: bindActionCreators(actions, dispacth)
+        };
     }
-}, (dispacth) => {
-    return {
-        actions: bindActionCreators(actions, dispacth)
-    }
-})(Page);
+)(Page);

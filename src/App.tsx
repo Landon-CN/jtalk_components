@@ -5,11 +5,11 @@ import { Page } from './modules';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 
-interface props {
-  store: Store<any>
+interface Props {
+  store: Store<any>;
 }
 
-class App extends React.Component<props, {}> {
+class App extends React.Component<Props, {}> {
   render() {
     const store = this.props.store;
     return (
@@ -22,7 +22,7 @@ class App extends React.Component<props, {}> {
           <p className="App-intro">
             To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-          <Page></Page>
+          <Page />
         </div>
       </Provider>
     );

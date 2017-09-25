@@ -8,14 +8,14 @@ import './App.less';
 
 const store = configureStore();
 
-const render = (App: new () => App) => {
+const render = (Root: new () => App) => {
   ReactDOM.render(
     <AppContainer>
-      <App store={store} />
+      <Root store={store} />
     </AppContainer>,
     document.getElementById('root')
-  )
-}
+  );
+};
 
 render(App);
 

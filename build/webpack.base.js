@@ -61,6 +61,13 @@ module.exports = {
     devtool: 'source-map',
     module: {
         loaders: [{
+                enforce: "pre",
+                test: /\.(ts|tsx)$/,
+                use: ['tslint-loader'],
+                include: path.resolve(__dirname, '../src'),
+                exclude: path.resolve(__dirname, '../node_modules')
+            },
+            {
                 test: /\.(ts|tsx)$/,
                 use: ['awesome-typescript-loader'],
                 include: path.resolve(__dirname, '../src'),

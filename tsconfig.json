@@ -7,7 +7,7 @@
         "noImplicitAny": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
-        "allowJs": true,
+        "allowJs": false,
         "jsx": "react",
         "rootDir": "src",
         "lib": [

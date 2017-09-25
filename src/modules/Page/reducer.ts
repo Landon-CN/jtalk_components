@@ -1,23 +1,24 @@
-import { handleActions } from 'redux-actions';
+import { handleActions, Action } from 'redux-actions';
 import * as Constants from './Constants';
 import * as Actions from './actions';
 import * as types from './types';
 
 const initState = {
-    count: 1,
-}
+  count: 1,
+};
 
-
-export default handleActions<typeof initState, any>({
-    [Constants.ADD](state, actions) {
-        const payload = <Actions.addType>actions.payload;
-        return {
-            ...state,
-            count: state.count + payload.count
-        };
+export default handleActions<typeof initState, any>(
+  {
+    [Constants.ADD](state: typeof initState, actions: Action<Actions.AddType>) {
+      const payload = <Actions.AddType> actions.payload;
+      return {
+        ...state,
+        count: state.count + payload.count
+      };
     }
-}, initState);
+  },
+  initState);
 
 export {
-    initState as state
-}
+  initState as state
+};
