@@ -12,6 +12,7 @@ const lessUse = [{
     loader: require.resolve('css-loader'),
     options: {
         importLoaders: 1,
+        minimize: process.env.NODE_ENV === 'production'
     },
 }, {
     loader: require.resolve('postcss-loader'),
