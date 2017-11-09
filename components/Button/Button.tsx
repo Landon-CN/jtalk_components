@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
-export default class Button extends Component {
-    render() {
-        return (
-            <button>xxx</button>
-        );
-    }
+interface Props {
+  size?: string;
+  className?: 'string';
+  loading?: boolean | { delay: number };
+  type?: string;
+  onClick?: Function;
+}
+
+export default class Button extends Component<Props, {}> {
+  render() {
+    const chilren = this.props.children;
+    return (
+      <button>{chilren}</button>
+    );
+  }
 }

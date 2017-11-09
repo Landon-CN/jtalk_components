@@ -19,6 +19,9 @@ const hotMid = require("webpack-hot-middleware")(compiler, {
     log: () => {}
 });
 
+// handle fallback for HTML5 history API
+app.use(require('connect-history-api-fallback')())
+
 app.use(devMid);
 
 app.use(hotMid);

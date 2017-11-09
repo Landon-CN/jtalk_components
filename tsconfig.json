@@ -18,7 +18,7 @@
         "noUnusedParameters": true
     },
     "inlucde": [
-        "src"
+        "site"
     ],
     "exclude": [
         "node_modules",
