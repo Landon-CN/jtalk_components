@@ -12,9 +12,15 @@ marked.setOptions({
     let componentCode = highlightJs.highlightAuto(code).value.replace(/\`/g, '\\`').replace(/\$\{/g, '\\$\\{');
     let highlightCode = componentCode.replace(/class=/g, 'class_code=');
 
-    return `<div dangerouslySetInnerHTML={{__html:\`${highlightCode}\`}}></div>`;
+    // return `<div dangerouslySetInnerHTML={{__html:\`${highlightCode}\`}}></div>`;
+    return highlightCode;
   }
 });
+
+var _table = renderer.table;
+renderer.table = function (header, body) {
+  return _table.call(this, header, body).replace('<table', '<table class="table table-bordered table-hover" style="width:auto;"')
+}
 
 function start() {
   glob("**/index.md", {
@@ -89,7 +95,7 @@ function compileFile(list) {
     list[index].yaml = yamlObj.yaml;
     list[index].data = marked(yamlObj.data, {
       renderer: renderer
-    }).replace(/class=/g, 'className=').replace(/class_code=/g, 'class=');
+    })
     list[index].itemPath = item.itemPath.substr(0, item.itemPath.indexOf('/'));
   }
 
@@ -120,12 +126,13 @@ function generatePage(list) {
 
         return (
           <div>
-            ${item.data}
+          <div dangerouslySetInnerHTML={{__html:\` ${item.data}\`}}></div>
+
             <div className="demo-list row">
             ${demo.list.map((data)=>{
               return `
                 <div className="demo col-md-6">
-                  ${data.html}
+                <div dangerouslySetInnerHTML={{__html:\` ${data.html}\`}}></div>
                   <div className="demo-component">
                   ${data.component}
                   </div>

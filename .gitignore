@@ -4,4 +4,5 @@ node_modules
 .awcache
 .DS_Store
 .vscode
+coverage
 dist

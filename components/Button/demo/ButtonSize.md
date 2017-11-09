@@ -11,9 +11,9 @@ import {Button} from 'Com';
 function test(){
     return (
         <div>
-        <Button size="small">small</Button>
-        <Button size="noraml">noraml</Button>
-        <Button size="big">big</Button>
+            <Button size="small">small</Button>
+            <Button size="default">default</Button>
+            <Button size="large">large</Button>
         </div>
         
     )
