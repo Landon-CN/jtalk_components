@@ -1,3 +1,5 @@
+const collectCoverage = process.argv[process.argv.length - 1] !== '--watchAll';
+
 module.exports = {
     transform: {
         "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
@@ -12,8 +14,8 @@ module.exports = {
         "jsx",
         "json"
     ],
-    // projects: ['./components'],
     setupFiles: ['./enzyme.config.js'],
-    collectCoverage: true,
-    collectCoverageFrom: ['components/**/*.{ts,tsx}']
+    collectCoverage: collectCoverage,
+    collectCoverageFrom: ['components/**/*.{ts,tsx}'],
+    mapCoverage: true
 }

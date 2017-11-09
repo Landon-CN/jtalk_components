@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Button.less';
+import * as ReactTypes from 'react';
 
 type ButtonSize = 'default' | 'small' | 'large';
 
@@ -18,13 +19,28 @@ interface State {
 
 const prefixCls = 'jtalk-btn';
 export default class Button extends Component<Props, State> {
+  static defaultProps = {
+
+  };
 
   state = {
     click: false
   };
 
-  btnClick = () => {
-    return 1;
+  btnClick = (event: ReactTypes.MouseEvent<HTMLButtonElement>) => {
+    this.setState({
+      click: true
+    });
+    setTimeout(() => {
+      this.setState({
+        click: false
+      });
+    }, 300);
+    const onClick = this.props.onClick;
+    if (onClick) {
+      onClick(event);
+    }
+
   }
 
   render() {
@@ -43,7 +59,8 @@ export default class Button extends Component<Props, State> {
     }
 
     const classes = classnames(prefixCls, {
-      [`${prefixCls}-${sizeCls}`]: !!sizeCls
+      [`${prefixCls}-${sizeCls}`]: !!sizeCls,
+      [`${prefixCls}-clicked`]: this.state.click
     });
 
     const chilren = this.props.children;

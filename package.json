@@ -14,10 +14,11 @@
     "react-router-dom": "^4.2.2"
   },
   "scripts": {
-    "build:site": "node ./site/build/index.js",
-    "dev": "cross-env NODE_ENV=development node build/devServer.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
-    "test": "jest --config ./jest.config.js"
+    "site:demo": "node ./site/build/index.js --watch",
+    "site:server": "cross-env NODE_ENV=development node build/devServer.js",
+    "test": "jest --config ./jest.config.js",
+    "test:watch": "jest --config ./jest.config.js --watchAll",
+    "build": "node ./site/build/index.js && cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
