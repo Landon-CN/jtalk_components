@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/scliuyang/jtalk_components.svg?branch=master)](https://travis-ci.org/scliuyang/jtalk_components)
-
+[![codecov](https://codecov.io/gh/scliuyang/jtalk_components/branch/master/graph/badge.svg)](https://codecov.io/gh/scliuyang/jtalk_components)
 
 # typescript + react
 - [typescript + react](#typescript-react)
