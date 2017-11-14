@@ -35,6 +35,13 @@ const lessUse = [{
     loader: require.resolve('less-loader')
 }];
 
+const cssLoader = {
+    test: /\.css$/,
+    use: process.env.NODE_ENV === 'production' ? ExtractTextPlugin.extract({
+        fallback: require.resolve('style-loader'),
+        use: ['css-loader']
+    }) : ['style-loader', 'css-loader']
+}
 
 
 
@@ -57,7 +64,10 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        alias: {
+            'Com': path.resolve(__dirname, '../components')
+        }
     },
     devtool: 'source-map',
     module: {
@@ -65,13 +75,13 @@ module.exports = {
                 enforce: "pre",
                 test: /\.(ts|tsx)$/,
                 use: ['tslint-loader'],
-                include: path.resolve(__dirname, '../src'),
+                include: path.resolve(__dirname, '../components'),
                 exclude: path.resolve(__dirname, '../node_modules')
             },
             {
                 test: /\.(ts|tsx)$/,
                 use: ['awesome-typescript-loader'],
-                include: path.resolve(__dirname, '../src'),
+                include: [path.resolve(__dirname, '../site'), path.resolve(__dirname, '../components')],
                 exclude: path.resolve(__dirname, '../node_modules')
             },
             {
@@ -83,6 +93,7 @@ module.exports = {
                 },
             },
             lessLoader,
+            cssLoader,
             {
                 exclude: [
                     /\.html$/,

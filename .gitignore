@@ -3,4 +3,6 @@ node_modules
 .idea
 .awcache
 .DS_Store
+.vscode
+coverage
 dist
