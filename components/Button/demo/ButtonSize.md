@@ -10,7 +10,7 @@ import {Button} from 'Com';
 
 function test(){
     return (
-        <div>
+        <div className="btn-demo-size">
             <Button size="small">small</Button>
             <Button size="default">default</Button>
             <Button size="large">large</Button>
@@ -21,3 +21,10 @@ function test(){
 export default test;
 
 ```
+
+<style>
+.btn-demo-size  .jtalk-btn{
+    margin-right: 10px;
+}
+
+</style>

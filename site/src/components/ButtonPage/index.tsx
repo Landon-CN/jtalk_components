@@ -71,7 +71,7 @@
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-keyword">return</span> (
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"btn-demo-size"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"small"</span>&gt;</span>small<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"default"</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>&gt;</span>large<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
@@ -81,7 +81,12 @@
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> test;
 </code></pre>
-`}}></div>
+<style>
+.btn-demo-size  .jtalk-btn{
+    margin-right: 10px;
+}
+
+</style>`}}></div>
                   <div className="demo-component">
                   <ButtonSize />
                   </div>
