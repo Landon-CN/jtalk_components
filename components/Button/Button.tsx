@@ -12,7 +12,7 @@ interface Props {
   loading?: boolean | { delay: number };
   type?: BtnType;
   onClick?: Function;
-  htmlType: string;
+  htmlType?: string;
 }
 
 interface State {
