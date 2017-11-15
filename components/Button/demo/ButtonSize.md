@@ -6,7 +6,7 @@ order: 2
 
 ``` jsx 
 import React from 'react';
-import {Button} from 'Com';
+import {Button} from 'jtalk_components';
 
 function test(){
     return (

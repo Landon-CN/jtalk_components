@@ -3,4 +3,4 @@ declare module "*.svg" {
     export = value;
 }
 
-declare module 'Com';
+declare module 'jtalk_components';

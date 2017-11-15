@@ -4,12 +4,13 @@ import './Button.less';
 import * as ReactTypes from 'react';
 
 type ButtonSize = 'default' | 'small' | 'large';
+type BtnType = 'primary' | 'danger';
 
 interface Props {
   size?: ButtonSize;
   className?: 'string';
   loading?: boolean | { delay: number };
-  type?: string;
+  type?: BtnType;
   onClick?: Function;
 }
 
@@ -28,14 +29,18 @@ export default class Button extends Component<Props, State> {
   };
 
   btnClick = (event: ReactTypes.MouseEvent<HTMLButtonElement>) => {
-    this.setState({
-      click: true
-    });
-    setTimeout(() => {
+    if (!this.state.click) {
       this.setState({
-        click: false
+        click: true
       });
-    }, 300);
+
+      setTimeout(() => {
+        this.setState({
+          click: false
+        });
+      }, 300);
+    }
+
     const onClick = this.props.onClick;
     if (onClick) {
       onClick(event);
@@ -44,7 +49,7 @@ export default class Button extends Component<Props, State> {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, type } = this.props;
 
     let sizeCls = '';
     switch (size) {
@@ -60,7 +65,8 @@ export default class Button extends Component<Props, State> {
 
     const classes = classnames(prefixCls, {
       [`${prefixCls}-${sizeCls}`]: !!sizeCls,
-      [`${prefixCls}-clicked`]: this.state.click
+      [`${prefixCls}-clicked`]: this.state.click,
+      [`${prefixCls}-${type}`]: !!type
     });
 
     const chilren = this.props.children;

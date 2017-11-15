@@ -66,7 +66,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            'Com': path.resolve(__dirname, '../components')
+            'jtalk_components': path.resolve(__dirname, '../components')
         }
     },
     devtool: 'source-map',

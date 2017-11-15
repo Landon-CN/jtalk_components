@@ -3,7 +3,12 @@ import {Button} from '../../../../components';
 
 function test(){
     return (
-        <Button>123</Button>
+        <div className="demo-type">
+            <Button>default</Button>
+            <Button type="primary">Primary</Button>
+            <Button type="danger">Danger</Button>
+        </div>
+
     )
 }
 export default test;

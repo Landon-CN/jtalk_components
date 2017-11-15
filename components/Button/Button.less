@@ -11,7 +11,13 @@
     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
     background-color: transparent;
     cursor: pointer;
-
+    &-sm {
+        height: 22px;
+        padding: 0 7px;
+    }
+    &-lg {
+        height: 32px;
+    }
     &:hover {
         color: #108ee9;
         border-color: #108ee9;
@@ -36,5 +42,31 @@
             opacity: 0;
             border-width: 6px;
         }
+    }
+    &-primary {
+        background-color: #108ee9;
+        border-color: #108ee9;
+        color: #fff;
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: #49a9ee;
+            border-color: #49a9ee;
+        }
+    }
+    &-danger {
+        background-color: #f7f7f7;
+        border-color: #d9d9d9;
+        color: #f04134;
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: #f04134;
+            border-color: #f04134;
+        }
+    }
+
+    &-danger&-clicked::before {
+        border: 1px solid #f04134;
     }
 }

@@ -6,13 +6,24 @@ order: 1
 
 ``` jsx 
 import React from 'react';
-import {Button} from 'Com';
+import {Button} from 'jtalk_components';
 
 function test(){
     return (
-        <Button>123</Button>
+        <div className="demo-type">
+            <Button>default</Button>
+            <Button type="primary">Primary</Button>
+            <Button type="danger">Danger</Button>
+        </div>
+       
     )
 }
 export default test;
 
 ```
+<style>
+    .demo-type .jtalk-btn {
+        margin-right:10px;
+    }
+</style>
+具有`primary`,`danger`或者不填
