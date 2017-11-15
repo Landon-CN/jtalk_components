@@ -12,6 +12,7 @@ interface Props {
   loading?: boolean | { delay: number };
   type?: BtnType;
   onClick?: Function;
+  htmlType: string;
 }
 
 interface State {
@@ -49,7 +50,7 @@ export default class Button extends Component<Props, State> {
   }
 
   render() {
-    const { size, type } = this.props;
+    const { size, type, htmlType } = this.props;
 
     let sizeCls = '';
     switch (size) {
@@ -72,6 +73,7 @@ export default class Button extends Component<Props, State> {
     const chilren = this.props.children;
     return (
       <button
+        type={htmlType}
         onClick={this.btnClick}
         className={classes}
       >

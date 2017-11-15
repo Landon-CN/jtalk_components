@@ -22,7 +22,7 @@
 </thead>
 <tbody>
 <tr>
-<td>col 3 is</td>
+<td><code>col 3 is</code></td>
 <td style="text-align:center">right-aligned</td>
 <td style="text-align:right">$1600</td>
 </tr>

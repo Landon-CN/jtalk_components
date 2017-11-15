@@ -17,5 +17,6 @@ module.exports = {
     setupFiles: ['./enzyme.config.js'],
     collectCoverage: collectCoverage,
     collectCoverageFrom: ['components/**/*.{ts,tsx}'],
+    coveragePathIgnorePatterns: ['components/index.ts'],
     mapCoverage: true
 }
