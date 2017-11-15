@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/scliuyang/jtalk_components.svg?branch=master)](https://travis-ci.org/scliuyang/jtalk_components)
 
-
 # typescript + react
-- [typescript + react](#typescript-react)
-- [使用](#%E4%BD%BF%E7%94%A8)
+- typescript + react seed项目 支持 import React from 'react'; 形式引入
+- 支持tslint
+- 支持hot-reload
+- 支持jest+enzyme测试，支持覆盖率
+- 支持markdown自动转化为demo list
 
 # 使用
 
