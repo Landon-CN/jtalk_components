@@ -2,7 +2,7 @@ import React from 'react';
 import './App.less';
 import Menus from './modules/Menus';
 import {
-  BrowserRouter as Router
+  HashRouter as Router
 } from 'react-router-dom';
 import Routes from './modules/Routes';
 

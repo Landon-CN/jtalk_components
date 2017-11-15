@@ -14,7 +14,7 @@ const productionConfig = merge(baseConfig, {
         filename: 'static/js/[name].[chunkhash:8].js',
         chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
         path: paths.outputPath,
-        publicPath: '/'
+        publicPath: '/jtalk_components/'
     },
     devtool: "#source-map",
     plugins: [
