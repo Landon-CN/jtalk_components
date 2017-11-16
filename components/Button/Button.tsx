@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Button.less';
 import * as ReactTypes from 'react';
+import Group from './ButtonGroup';
 
 type ButtonSize = 'default' | 'small' | 'large';
 type BtnType = 'primary' | 'danger';
@@ -21,6 +22,7 @@ interface State {
 
 const prefixCls = 'jtalk-btn';
 export default class Button extends Component<Props, State> {
+  static Group: typeof Group;
   static defaultProps = {
 
   };

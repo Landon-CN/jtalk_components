@@ -114,7 +114,25 @@ function generatePage(list) {
 
 
     const demo = generateDemoList(item.demo, componentPath);
+    let demoStr = '';
+    for (; demo.list.length > 0;) {
+      let list = demo.list.splice(0, 2);
 
+      demoStr += `
+      <div className="demo-list row">
+      ${list.map((data)=>{
+        return `
+          <div className="demo col-md-6">
+          <div dangerouslySetInnerHTML={{__html:\` ${data.html}\`}}></div>
+            <div className="demo-component">
+            ${data.component}
+            </div>
+          </div>
+        `
+      }).join('')}
+      </div>
+      `;
+    }
 
     let pageStr = `
     /* tslint:disable */
@@ -128,18 +146,7 @@ function generatePage(list) {
           <div>
           <div dangerouslySetInnerHTML={{__html:\` ${item.data}\`}}></div>
 
-            <div className="demo-list row">
-            ${demo.list.map((data)=>{
-              return `
-                <div className="demo col-md-6">
-                <div dangerouslySetInnerHTML={{__html:\` ${data.html}\`}}></div>
-                  <div className="demo-component">
-                  ${data.component}
-                  </div>
-                </div>
-              `
-            }).join('')}
-            </div>
+           ${demoStr}
           </div>
         );
       }

@@ -1,7 +1,7 @@
 
     /* tslint:disable */
     import React from 'react';
-    import Button from './Button';import ButtonSize from './ButtonSize';
+    import Button from './Button';import ButtonGroup from './ButtonGroup';import ButtonSize from './ButtonSize';
 
     class ButtonPage extends React.Component<{}, {}> {
       render() {
@@ -40,10 +40,11 @@
 </table>
 `}}></div>
 
-            <div className="demo-list row">
-            
-                <div className="demo col-md-6">
-                <div dangerouslySetInnerHTML={{__html:` <blockquote>
+           
+      <div className="demo-list row">
+      
+          <div className="demo col-md-6">
+          <div dangerouslySetInnerHTML={{__html:` <blockquote>
 <p>可以点击</p>
 </blockquote>
 <pre><code className="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
@@ -68,13 +69,13 @@
 </style>
 具有<code>primary</code>,<code>danger</code>或者不填</p>
 `}}></div>
-                  <div className="demo-component">
-                  <Button />
-                  </div>
-                </div>
-              
-                <div className="demo col-md-6">
-                <div dangerouslySetInnerHTML={{__html:` <blockquote>
+            <div className="demo-component">
+            <Button />
+            </div>
+          </div>
+        
+          <div className="demo col-md-6">
+          <div dangerouslySetInnerHTML={{__html:` <blockquote>
 <p>按钮大小</p>
 </blockquote>
 <pre><code className="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
@@ -98,12 +99,44 @@
 }
 
 </style>`}}></div>
-                  <div className="demo-component">
-                  <ButtonSize />
-                  </div>
-                </div>
-              
+            <div className="demo-component">
+            <ButtonSize />
             </div>
+          </div>
+        
+      </div>
+      
+      <div className="demo-list row">
+      
+          <div className="demo col-md-6">
+          <div dangerouslySetInnerHTML={{__html:` <blockquote>
+<p>ButtonGroup</p>
+</blockquote>
+<pre><code className="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {Button} <span class="hljs-keyword">from</span> <span class="hljs-string">'jtalk_components'</span>;
+<span class="hljs-keyword">const</span> ButtonGroup = Button.Group;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"demo-button-group"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> test;
+</code></pre>
+`}}></div>
+            <div className="demo-component">
+            <ButtonGroup />
+            </div>
+          </div>
+        
+      </div>
+      
           </div>
         );
       }
