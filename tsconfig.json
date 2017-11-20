@@ -15,7 +15,11 @@
             "es2015.promise"
         ],
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "noUnusedParameters": true,
+        "baseUrl": ".",
+        "paths": {
+            "jtalk_components": ["components/index.ts"]
+        }
     },
     "inlucde": [
         "components",

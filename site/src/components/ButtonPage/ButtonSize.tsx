@@ -1,5 +1,5 @@
 /* tslint:disable */import React from 'react';
-import {Button} from '../../../../components';
+import {Button} from 'jtalk_components';
 
 function test(){
     return (

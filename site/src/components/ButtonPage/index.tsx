@@ -53,7 +53,7 @@
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-keyword">return</span> (
         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"demo-type"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> &gt;</span>asdfsadefault<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -119,17 +119,33 @@
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-keyword">return</span> (
         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"demo-button-group"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"small"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ButtonGroup</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ButtonGroup</span>&gt;</span>
+
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
     )
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> test;
 </code></pre>
-`}}></div>
+<style>
+    .demo-button-group .jtalk-btn-group{
+         margin-bottom: 10px;
+
+    }
+</style>`}}></div>
             <div className="demo-component">
             <ButtonGroup />
             </div>

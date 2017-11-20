@@ -179,7 +179,8 @@ function generateDemoList(demoList, componentPath) {
     renderer.code = (code, lang) => {
 
       // 提取代码，并且关掉tslint,替换组件路径，保证有正确的代码提示
-      componentCode = '/* tslint:disable */' + code.replace(/'jtalk_components'/g, '\'../../../../components\'');
+      // componentCode = '/* tslint:disable */' + code.replace(/'jtalk_components'/g, '\'../../../../components\'');
+      componentCode = '/* tslint:disable */' + code;
       return _code.call(renderer, code, lang);
     }
     yaml.data = marked(yaml.data, {
