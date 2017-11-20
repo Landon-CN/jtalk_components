@@ -22,6 +22,10 @@ renderer.table = function (header, body) {
   return _table.call(this, header, body).replace('<table', '<table class="table table-bordered table-hover" style="width:auto;"')
 }
 
+if (!fs.existsSync(path.resolve(__dirname, '../src/components'))) {
+  fs.mkdirSync(path.resolve(__dirname, '../src/components'));
+}
+
 function start() {
   glob("**/index.md", {
     cwd: componentsPath
@@ -32,8 +36,6 @@ function start() {
       promiseArr.push(readFile(path.resolve(componentsPath, itemPath), itemPath));
     }
     Promise.all(promiseArr).then((contentList) => {
-
-
       readMdDemo(contentList);
     }).catch((e) => {
       console.error(e);
