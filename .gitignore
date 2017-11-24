@@ -6,3 +6,5 @@ node_modules
 .vscode
 coverage
 dist
+site/src/components/
+site/src/modules/MenusList.ts

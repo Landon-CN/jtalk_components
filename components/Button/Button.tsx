@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Button.less';
 import * as ReactTypes from 'react';
+import Group from './ButtonGroup';
 
-type ButtonSize = 'default' | 'small' | 'large';
+export type ButtonSize = 'default' | 'small' | 'large';
 type BtnType = 'primary' | 'danger';
 
-interface Props {
+export interface Props {
   size?: ButtonSize;
   className?: 'string';
   loading?: boolean | { delay: number };
@@ -21,6 +22,7 @@ interface State {
 
 const prefixCls = 'jtalk-btn';
 export default class Button extends Component<Props, State> {
+  static Group: typeof Group;
   static defaultProps = {
 
   };
@@ -63,7 +65,6 @@ export default class Button extends Component<Props, State> {
       default:
         break;
     }
-
     const classes = classnames(prefixCls, {
       [`${prefixCls}-${sizeCls}`]: !!sizeCls,
       [`${prefixCls}-clicked`]: this.state.click,

@@ -22,6 +22,10 @@ renderer.table = function (header, body) {
   return _table.call(this, header, body).replace('<table', '<table class="table table-bordered table-hover" style="width:auto;"')
 }
 
+if (!fs.existsSync(path.resolve(__dirname, '../src/components'))) {
+  fs.mkdirSync(path.resolve(__dirname, '../src/components'));
+}
+
 function start() {
   glob("**/index.md", {
     cwd: componentsPath
@@ -32,8 +36,6 @@ function start() {
       promiseArr.push(readFile(path.resolve(componentsPath, itemPath), itemPath));
     }
     Promise.all(promiseArr).then((contentList) => {
-
-
       readMdDemo(contentList);
     }).catch((e) => {
       console.error(e);
@@ -114,7 +116,25 @@ function generatePage(list) {
 
 
     const demo = generateDemoList(item.demo, componentPath);
+    let demoStr = '';
+    for (; demo.list.length > 0;) {
+      let list = demo.list.splice(0, 2);
 
+      demoStr += `
+      <div className="demo-list row">
+      ${list.map((data)=>{
+        return `
+          <div className="demo col-md-6">
+          <div dangerouslySetInnerHTML={{__html:\` ${data.html}\`}}></div>
+            <div className="demo-component">
+            ${data.component}
+            </div>
+          </div>
+        `
+      }).join('')}
+      </div>
+      `;
+    }
 
     let pageStr = `
     /* tslint:disable */
@@ -128,18 +148,7 @@ function generatePage(list) {
           <div>
           <div dangerouslySetInnerHTML={{__html:\` ${item.data}\`}}></div>
 
-            <div className="demo-list row">
-            ${demo.list.map((data)=>{
-              return `
-                <div className="demo col-md-6">
-                <div dangerouslySetInnerHTML={{__html:\` ${data.html}\`}}></div>
-                  <div className="demo-component">
-                  ${data.component}
-                  </div>
-                </div>
-              `
-            }).join('')}
-            </div>
+           ${demoStr}
           </div>
         );
       }
@@ -172,7 +181,8 @@ function generateDemoList(demoList, componentPath) {
     renderer.code = (code, lang) => {
 
       // 提取代码，并且关掉tslint,替换组件路径，保证有正确的代码提示
-      componentCode = '/* tslint:disable */' + code.replace(/'jtalk_components'/g, '\'../../../../components\'');
+      // componentCode = '/* tslint:disable */' + code.replace(/'jtalk_components'/g, '\'../../../../components\'');
+      componentCode = '/* tslint:disable */' + code;
       return _code.call(renderer, code, lang);
     }
     yaml.data = marked(yaml.data, {

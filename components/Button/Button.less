@@ -1,4 +1,5 @@
-.jtalk-btn {
+@prefix: ~".jtalk-btn";
+@{prefix} {
     position: relative;
     display: inline-block;
     color: rgba(0, 0, 0, .65);
@@ -11,12 +12,18 @@
     transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
     background-color: transparent;
     cursor: pointer;
-    &-sm {
+    .sm {
         height: 22px;
         padding: 0 7px;
     }
-    &-lg {
+    .lg {
         height: 32px;
+    }
+    &-sm {
+        .sm;
+    }
+    &-lg {
+        .lg;
     }
     &:hover {
         color: #108ee9;
@@ -30,7 +37,7 @@
         left: -1px;
         right: -1px;
         border: 1px solid #108ee9;
-        animation: ButtonClick .4s;
+        animation: ButtonClick .4s infinite;
         border-radius: inherit;
     }
     @keyframes ButtonClick {
@@ -65,8 +72,42 @@
             border-color: #f04134;
         }
     }
-
     &-danger&-clicked::before {
         border: 1px solid #f04134;
+    } // button group
+    &-group {
+        >button:not(:first-child):not(:last-child) {
+            border-radius: 0;
+            border-right: 0;
+            &::before {
+                border-left: 0;
+                border-right: 0;
+            }
+        }
+        >button:first-child:not(:last-child) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+            &::before {
+                border-right: 0;
+            }
+        }
+        >button:last-child:not(:first-child) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            &::before {
+                border-left: 0;
+            }
+        }
+        &-lg {
+            >button {
+                .lg
+            }
+        }
+        &-sm {
+            >button {
+                .sm
+            }
+        }
     }
 }
