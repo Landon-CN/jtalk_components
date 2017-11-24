@@ -1,5 +1,5 @@
 /* tslint:disable */import React from 'react';
-import {Row, Col} from '../../../../components';
+import {Row, Col} from 'jtalk_components';
 
 function test(){
     return (

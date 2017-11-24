@@ -4,10 +4,16 @@ title: Grid 栅格
 
 # Grid 栅格
 
-> 栅格
+> API
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| `col 3 is `     | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+#### Col
+使用Col必须被Row包裹
+
+| 参数           | 说明           | 类型   | 默认值 |
+| ------------- |:-------------:| -----:|-----:|
+| unit  |   栅格占位格数   | number   |   -   |
+| offset  |   栅格左侧的间隔格数，间隔内不可以有栅格   | number   |   -   |
+| xs  |   `<768px` 响应式栅格，可为栅格数或一个包含其他属性的对象  | number &#124; object   |   -   |
+| sm  |   `≥768px` 响应式栅格，可为栅格数或一个包含其他属性的对象  | number &#124; object   |   -   |
+| md  |   `≥992px` 响应式栅格，可为栅格数或一个包含其他属性的对象  | number &#124; object   |   -   |
+| lg  |   `≥1200px` 响应式栅格，可为栅格数或一个包含其他属性的对象  | number &#124; object   |   -   |

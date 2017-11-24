@@ -1,8 +1,8 @@
 ---
-order: 1
+order: 2
 ---
 
-> 栅格
+> 响应式布局
 
 ``` jsx 
 import React from 'react';
@@ -12,8 +12,12 @@ function test(){
     return (
         <div className="demo-type">
             <Row>
-              <Col unit={4}>column</Col>
-              <Col xs={2} offset={2}>column</Col>
+              <Col sm={8} lg={5}>column</Col>
+              <Col sm={2} lg={5} offset={2}>column</Col>
+            </Row>
+            <Row style={{marginTop: 10}}>
+              <Col sm={{unit:5}} lg={5}>column</Col>
+              <Col sm={{unit:5,offset:2}} lg={{offset:0,unit:7}}>column</Col>
             </Row>
         </div>
        

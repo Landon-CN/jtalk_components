@@ -8,7 +8,8 @@ interface State {
 
 }
 
-export default class Button extends Component<Props, State> {
+const prefixCls = 'jtalk-row';
+export default class Row extends Component<Props, State> {
   static defaultProps = {
 
   };
@@ -18,7 +19,7 @@ export default class Button extends Component<Props, State> {
   };
 
   render() {
-    const {children} = this.props;
+    const {children, ...others} = this.props;
     const cols = Children.map(children, (col: ReactElement<HTMLDivElement>) => {
       if (!col) {
         return null;
@@ -27,6 +28,8 @@ export default class Button extends Component<Props, State> {
     });
     return (
       <div
+        {...others}
+        className={prefixCls}
       >
         {cols}
       </div>
