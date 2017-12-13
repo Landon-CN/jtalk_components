@@ -244,7 +244,7 @@ function getImportStr(list) {
   let ret = '';
   for (let item of list) {
     let componentName = `${item.itemPath}Page`;
-    ret += `import ${componentName} from '../components/${componentName}'`;
+    ret += `import ${componentName} from '../components/${componentName}';`;
   }
   return ret;
 }

@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const paths = require('./paths');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 
 const lessUse = [{
@@ -74,13 +75,23 @@ module.exports = {
         loaders: [{
                 enforce: "pre",
                 test: /\.(ts|tsx)$/,
-                use: ['tslint-loader'],
+                use: {
+                    loader: 'tslint-loader',
+                    options: {
+                        failOnHint: process.env.NODE_ENV === 'production'
+                    }
+                },
                 include: path.resolve(__dirname, '../components'),
                 exclude: path.resolve(__dirname, '../node_modules')
             },
             {
                 test: /\.(ts|tsx)$/,
-                use: ['awesome-typescript-loader'],
+                use: [{
+                    loader: 'awesome-typescript-loader',
+                    options: {
+                        errorsAsWarnings: true
+                    }
+                }],
                 include: [path.resolve(__dirname, '../site'), path.resolve(__dirname, '../components')],
                 exclude: path.resolve(__dirname, '../node_modules')
             },
@@ -115,6 +126,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CheckerPlugin()
+        // new CheckerPlugin(),
+        new HardSourceWebpackPlugin()
     ]
 }
