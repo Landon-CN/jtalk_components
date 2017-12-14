@@ -1,0 +1,61 @@
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+@prefix: jtalk-col;
+@column-count: 12;
+.@{prefix}{
+  position: relative;
+}
+.make-grid();
+.make-grid(-xs);
+@media (min-width: @screen-sm) {
+  .make-grid(-sm);
+}
+@media (min-width: @screen-md) {
+  .make-grid(-md);
+}
+@media (min-width: @screen-lg) {
+  .make-grid(-lg);
+}
+
+.float-grid-columns(@class) {
+  .col(@index) { // initial
+    @item: ~".@{prefix}@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @column-count) { // general
+    @item: ~".@{prefix}@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @column-count) { // terminal
+    @{list} {
+      float: left;
+      flex: 0 0 auto;
+    }
+  }
+  .col(1);
+}
+
+.loop-grid-columns(@index, @class) when (@index > 0) {
+  .@{prefix}@{class}-@{index} {
+    width: percentage((@index / @column-count));
+  }
+  .@{prefix}@{class}-offset-@{index} {
+    margin-left: percentage((@index / @column-count));
+  }
+  .loop-grid-columns((@index - 1), @class);
+}
+
+.loop-grid-columns(@index, @class) when (@index = 0) {
+  .@{prefix}@{class}-@{index} {
+    display: none;
+  }
+  .@{prefix}@{class}-offset-@{index} {
+    margin-left: 0;
+  }
+}
+
+.make-grid(@class: ~'') {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@column-count, @class);
+}
