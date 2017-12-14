@@ -1,5 +1,4 @@
 @import '../base.less';
-
 .jtalk-menu {
     list-style: none;
     padding: 0;
@@ -20,23 +19,49 @@
         transition: all 0.2s @cubic-bezier;
         border-bottom: 2px solid transparent;
         position: relative;
-
-        > a {
+        color: rgba(0, 0, 0, .65);
+        >a {
             display: block;
             color: inherit;
             &::before {
                 content: '';
                 position: absolute;
-                left:0;
-                right:0;
-                bottom:0;
-                top:0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+            }
+        }
+        &-active,
+        &:hover {
+            border-bottom-color: #108ee9;
+            color: #108ee9;
+        }
+    }
+    &-sub {
+        .jtalk-menu-item;
+        position: relative;
+
+        >ul {
+            list-style: none;
+            position: absolute;
+            padding: 0;
+            left: 0;
+            height: 0;
+            overflow: hidden;
+            transform: scaleY(0.2);
+            transform-origin: top center;
+            transition: all @cubic-bezier 0.2s;
+            > li {
+                width: 100%;
             }
         }
 
-        &-active,&:hover {
-            border-bottom-color: #108ee9;
-            color: #108ee9;
+        &-open {
+            >ul {
+                height: auto;
+                transform: scaleY(1);
+            }
         }
     }
 }

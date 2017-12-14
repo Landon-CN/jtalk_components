@@ -12,10 +12,11 @@
         "lib": [
             "dom",
             "es5",
-            "es2015.promise"
+            "es2015.promise",
+            "es2016"
         ],
         "noUnusedLocals": true,
-        "noUnusedParameters": true,
+        "noUnusedParameters": false,
         "baseUrl": ".",
         "paths": {
             "jtalk_components": ["components/index.ts"]

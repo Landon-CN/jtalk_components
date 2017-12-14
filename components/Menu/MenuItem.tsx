@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import * as ReactTypes from 'react';
+// import * as ReactTypes from 'react';
 
 const prefix = 'jtalk-menu-item';
 
 export interface MenuItemProps {
-  id?: ReactTypes.Key;
+  id?: string;
   active?: boolean;
 }
 
 export default class MenuItem extends Component<MenuItemProps, {}> {
 
   static propTypes = {
-    id: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string
-    ])
+    id: PropTypes.string
   };
 
   static contextTypes = {

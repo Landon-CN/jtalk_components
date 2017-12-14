@@ -78,7 +78,8 @@ module.exports = {
                 use: {
                     loader: 'tslint-loader',
                     options: {
-                        failOnHint: process.env.NODE_ENV === 'production'
+                        failOnHint: process.env.NODE_ENV === 'production',
+                        typeCheck: true
                     }
                 },
                 include: path.resolve(__dirname, '../components'),
@@ -126,7 +127,7 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CheckerPlugin(),
-        new HardSourceWebpackPlugin()
+        new CheckerPlugin(),
+        // new HardSourceWebpackPlugin()
     ]
 }
